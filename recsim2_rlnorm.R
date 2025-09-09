@@ -1,3 +1,8 @@
+#Based on recsim2
+  #Draw random samples using rlnorm() instead of rnorm()
+  #Added density plots
+  #Maximum capped at max observed landings
+
 ############################### Set a simulation with a mean at the ACL and pse of 50
 
 #################################### ACL Single Year Average #####################################
