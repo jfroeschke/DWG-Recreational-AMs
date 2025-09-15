@@ -25,7 +25,39 @@ ggplot(data.frame(values), aes(values)) + geom_density(fill='chartreuse') + them
 # Proportional standard error - separate PSE value for each year
   #SD per year = annual landings * annual PSE
 
-pse <- rnorm(23, 0.4, 0.1) #random here, but can be replaced with known PSE
+#pse <- rnorm(23, 0.4, 0.1) #simulated here, but can be replaced with known PSE
+
+#PSE from MRIP query tool
+  #https://www.fisheries.noaa.gov/data-tools/recreational-fisheries-statistics-queries
+  #Annual, Gulf, All modes combined, All areas combined, Type A (Harvest based on observed harvest)
+  #2001-2009, 2017: using PSE for Warsaw
+  #2010-2016, 2018-2023: using PSE for Yellowedge
+
+pse <- c(94.7,
+         23.8,
+         51.8,
+         52.4,
+         29.2,
+         65.6,
+         41.5,
+         39.5,
+         85.4,
+         93.1,
+         165.8,
+         102.7,
+         69.4,
+         73.8,
+         67.8,
+         83.6,
+         104.8,
+         67.8,
+         34,
+         52.7,
+         108.2,
+         64.2,
+         70.7)
+
+pse <- pse/100
 
 mean_value <- values
 n_repeats <- 100
